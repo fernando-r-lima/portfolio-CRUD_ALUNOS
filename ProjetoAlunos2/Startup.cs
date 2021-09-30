@@ -11,6 +11,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using ProjetoAlunos2.Data;
+using ProjetoAlunos2.Services;
 
 namespace ProjetoAlunos2
 {
@@ -41,6 +42,7 @@ namespace ProjetoAlunos2
                     builder.MigrationsAssembly("ProjetoAlunos2")));
 
             services.AddScoped<SeedingService>();
+            services.AddScoped<AlunosService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

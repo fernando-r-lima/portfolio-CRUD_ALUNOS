@@ -1,0 +1,52 @@
+﻿@model IEnumerable<ProjetoAlunos2.Models.Aluno>
+
+@{
+    ViewData["Title"] = "Lista de todos os alunos";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<table class="table table-striped table-hover">
+    <thead>
+        <tr class="success">
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Nome)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Sobrenome)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DataDeNascimento)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nome)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Sobrenome)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DataDeNascimento)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
