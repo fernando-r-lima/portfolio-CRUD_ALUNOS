@@ -20,5 +20,11 @@ namespace ProjetoAlunos2.Services
         {
             return _context.Aluno.ToList();
         }
+
+        public void CadastrarAluno(Aluno obj) 
+        {
+            _context.Add(obj);
+            _context.SaveChanges();
+        }
     }
 }

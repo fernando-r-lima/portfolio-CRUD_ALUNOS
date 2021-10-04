@@ -24,6 +24,10 @@ namespace ProjetoAlunos2.Models
         [DataType(DataType.EmailAddress)]
         public string Email { get; set; }
 
+        public Aluno()
+        {
+        }
+
         public Aluno(int id, string nome, string sobrenome, DateTime dataDeNascimento, string email)
         {
             Id = id;
