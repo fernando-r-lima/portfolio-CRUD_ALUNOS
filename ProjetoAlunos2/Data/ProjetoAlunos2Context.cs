@@ -14,6 +14,8 @@ namespace ProjetoAlunos2.Data
         {
         }
 
-        public DbSet<ProjetoAlunos2.Models.Aluno> Aluno { get; set; }
+        public DbSet<Aluno> Aluno { get; set; }
+
+        public DbSet<Turma> Turma { get; set; }
     }
 }
