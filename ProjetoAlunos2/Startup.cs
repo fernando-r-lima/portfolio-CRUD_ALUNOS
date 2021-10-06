@@ -43,6 +43,7 @@ namespace ProjetoAlunos2
 
             services.AddScoped<SeedingService>();
             services.AddScoped<AlunosService>();
+            services.AddScoped<TurmasService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
