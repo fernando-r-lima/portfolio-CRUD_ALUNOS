@@ -24,17 +24,21 @@ namespace ProjetoAlunos2.Models
         [DataType(DataType.EmailAddress)]
         public string Email { get; set; }
 
+        [Display(Name = "Código da turma")]
+        public int TurmaId { get; set; }
+
         public Aluno()
         {
         }
 
-        public Aluno(int id, string nome, string sobrenome, DateTime dataDeNascimento, string email)
+        public Aluno(int id, string nome, string sobrenome, DateTime dataDeNascimento, string email, int turmaId)
         {
             Id = id;
             Nome = nome;
             Sobrenome = sobrenome;
             DataDeNascimento = dataDeNascimento;
             Email = email;
+            TurmaId = turmaId;
         }
     }
 }
