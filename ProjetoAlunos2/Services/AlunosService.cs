@@ -26,5 +26,17 @@ namespace ProjetoAlunos2.Services
             _context.Add(obj);
             _context.SaveChanges();
         }
+
+        public Aluno EncontrarPorId(int id)
+        {
+            return _context.Aluno.FirstOrDefault(obj => obj.Id == id);
+        }
+
+        public void ExcluirAluno(int id)
+        {
+            var obj = _context.Aluno.Find(id);
+            _context.Aluno.Remove(obj);
+            _context.SaveChanges();
+        }
     }
 }

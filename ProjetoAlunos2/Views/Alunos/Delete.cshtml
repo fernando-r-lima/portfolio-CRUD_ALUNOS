@@ -1,0 +1,47 @@
+﻿@model ProjetoAlunos2.Models.Aluno
+
+@{
+    ViewData["Title"] = "Excluir Aluno";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<h3 class="text-danger">Tem certeza que deseja excluir essa matrícula de aluno?</h3>
+<hr />
+
+<div>
+    <h4>Aluno a ser excluído</h4>
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nome)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Nome)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Sobrenome)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Sobrenome)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.DataDeNascimento)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.DataDeNascimento)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+    </dl>
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Excluir" class="btn btn-danger" />
+        <br /><br />
+        <a asp-action="Index" class="btn btn-default">Voltar</a>
+    </form>
+
+</div>

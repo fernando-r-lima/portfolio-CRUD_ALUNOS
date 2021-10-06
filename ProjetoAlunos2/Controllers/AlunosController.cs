@@ -36,5 +36,28 @@ namespace ProjetoAlunos2.Controllers
             _alunosService.CadastrarAluno(aluno);
             return RedirectToAction(nameof(Index));
         }
+
+        public IActionResult Delete(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var obj = _alunosService.EncontrarPorId(id.Value);
+            if (obj == null)
+            {
+                return NotFound();
+            }
+            return View(obj);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Delete(int id)
+        {
+            _alunosService.ExcluirAluno(id);
+            return RedirectToAction(nameof(Index));
+        }
     }
 }
