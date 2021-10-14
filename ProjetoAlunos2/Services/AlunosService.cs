@@ -19,7 +19,8 @@ namespace ProjetoAlunos2.Services
 
         public List<Aluno> RetornarTodosAlunos()
         {
-            return _context.Aluno.ToList();
+            //return _context.Aluno.ToList();
+            return _context.Aluno.Include(obj => obj.Turma).OrderBy(obj => obj.Id).ToList();
         }
 
         public void CadastrarAluno(Aluno obj) 
