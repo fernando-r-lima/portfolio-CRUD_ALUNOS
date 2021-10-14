@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 using ProjetoAlunos2.Data;
 using ProjetoAlunos2.Models;
 
@@ -29,7 +30,8 @@ namespace ProjetoAlunos2.Services
 
         public Aluno EncontrarPorId(int id)
         {
-            return _context.Aluno.FirstOrDefault(obj => obj.Id == id);
+            //return _context.Aluno.FirstOrDefault(obj => obj.Id == id);
+            return _context.Aluno.Include(obj => obj.Turma).FirstOrDefault(obj => obj.Id == id);
         }
 
         public void ExcluirAluno(int id)

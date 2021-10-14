@@ -64,5 +64,22 @@ namespace ProjetoAlunos2.Controllers
             _alunosService.ExcluirAluno(id);
             return RedirectToAction(nameof(Index));
         }
+
+        public IActionResult Details(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var obj = _alunosService.EncontrarPorId(id.Value);
+            if (obj == null)
+            {
+                return NotFound();
+            }
+
+            return View(obj);
+        }
+
     }
 }

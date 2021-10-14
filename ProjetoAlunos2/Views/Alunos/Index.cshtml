@@ -37,29 +37,30 @@
     <tbody>
         @foreach (var item in Model)
         {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Id)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Nome)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Sobrenome)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DataDeNascimento)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Email)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.TurmaId)
-            </td>
-            <td>
-                <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-xs btn-danger">Excluir</a>
-            </td>
-        </tr>
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nome)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Sobrenome)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DataDeNascimento)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TurmaId)
+                </td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-xs btn-info">Detalhes</a>&nbsp; &nbsp; &nbsp; &nbsp;
+                    <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-xs btn-danger">Excluir</a>
+                </td>
+            </tr>
         }
     </tbody>
 </table>
