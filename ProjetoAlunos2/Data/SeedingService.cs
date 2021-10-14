@@ -36,10 +36,10 @@ namespace ProjetoAlunos2.Data
             Aluno a11 = new Aluno(11, "Luiz Henrique", "Justino de Almeida", new DateTime(1994, 6, 8), "henrique.lu94@gmail.com", 3);
             Aluno a12 = new Aluno(12, "Flaviana", "Souza", new DateTime(1993, 12, 10), "souzaflaviana@gmail.com", 4);
 
-            Turma t1 = new Turma(1, "DESENHO I", "2018.1", "QUA 10:00-12:00");
-            Turma t2 = new Turma(2, "TIPOGRAFIA", "2018.1", "QUI 08:00-10:00");
-            Turma t3 = new Turma(3, "DESENHO I", "2018.2", "SEG 10:00-12:00");
-            Turma t4 = new Turma(4, "TIPOGRAFIA", "2018.2", "QUI 10:00-12:00");
+            Turma t1 = new Turma(1, "DESENHO I", "QUA 10:00-12:00");
+            Turma t2 = new Turma(2, "TIPOGRAFIA","QUI 08:00-10:00");
+            Turma t3 = new Turma(3, "DESENHO II", "SEG 10:00-12:00");
+            Turma t4 = new Turma(4, "PINTURA", "QUI 10:00-12:00");
 
 
             _context.Aluno.AddRange(a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12);

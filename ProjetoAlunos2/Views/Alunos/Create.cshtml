@@ -1,4 +1,4 @@
-﻿@model ProjetoAlunos2.Models.Aluno
+﻿@model ProjetoAlunos2.Models.ViewModels.FormularioAlunoViewModel;
 
 @{
     ViewData["Title"] = "Formulário de cadastro de aluno novo";
@@ -11,20 +11,24 @@
     <div class="col-md-4">
         <form asp-action="Create">
             <div class="form-group">
-                <label asp-for="Nome" class="control-label"></label>
-                <input asp-for="Nome" class="form-control" />
+                <label asp-for="Aluno.Nome" class="control-label"></label>
+                <input asp-for="Aluno.Nome" class="form-control" />
             </div>
             <div class="form-group">
-                <label asp-for="Sobrenome" class="control-label"></label>
-                <input asp-for="Sobrenome" class="form-control" />
+                <label asp-for="Aluno.Sobrenome" class="control-label"></label>
+                <input asp-for="Aluno.Sobrenome" class="form-control" />
             </div>
             <div class="form-group">
-                <label asp-for="DataDeNascimento" class="control-label"></label>
-                <input asp-for="DataDeNascimento" class="form-control" />
+                <label asp-for="Aluno.DataDeNascimento" class="control-label"></label>
+                <input asp-for="Aluno.DataDeNascimento" class="form-control" />
             </div>
             <div class="form-group">
-                <label asp-for="Email" class="control-label"></label>
-                <input asp-for="Email" class="form-control" />
+                <label asp-for="Aluno.Email" class="control-label"></label>
+                <input asp-for="Aluno.Email" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Aluno.TurmaId" class="control-label">Disciplina</label>
+                <select asp-for="Aluno.TurmaId" asp-items="@(new SelectList(Model.Turmas,"Id","Disciplina"))" class="form-control"></select>
             </div>
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-default" />

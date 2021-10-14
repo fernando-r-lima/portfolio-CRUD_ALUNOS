@@ -18,7 +18,8 @@ namespace ProjetoAlunos2.Services
 
         public List<Turma> RetornarTodasTurmas()
         {
-            return _context.Turma.ToList();
+            return _context.Turma.OrderBy(x => x.Disciplina).ToList();
+            
         }
 
     }

@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using ProjetoAlunos2.Services;
 using ProjetoAlunos2.Models;
+using ProjetoAlunos2.Models.ViewModels;
 
 namespace ProjetoAlunos2.Controllers
 {
@@ -12,10 +13,12 @@ namespace ProjetoAlunos2.Controllers
     {
 
         private readonly AlunosService _alunosService;
+        private readonly TurmasService _turmasService;
 
-        public AlunosController(AlunosService alunosService)
+        public AlunosController(AlunosService alunosService, TurmasService turmasService)
         {
             _alunosService = alunosService;
+            _turmasService = turmasService;
         }
 
         public IActionResult Index()
@@ -26,7 +29,9 @@ namespace ProjetoAlunos2.Controllers
 
         public IActionResult Create()
         {
-            return View();
+            var turmas = _turmasService.RetornarTodasTurmas();
+            var viewModel = new FormularioAlunoViewModel { Turmas = turmas };
+            return View(viewModel);
         }
 
         [HttpPost]
