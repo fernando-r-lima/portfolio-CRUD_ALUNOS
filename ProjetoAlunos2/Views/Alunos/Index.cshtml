@@ -31,7 +31,7 @@
             <th>
                 @Html.DisplayNameFor(model => model.Turma)
             </th>
-            <th></th>
+            <th>Opções</th>
         </tr>
     </thead>
     <tbody>
@@ -57,7 +57,8 @@
                     @Html.DisplayFor(modelItem => item.Turma.Disciplina)
                 </td>
                 <td>
-                    <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-xs btn-info">Detalhes</a>&nbsp; &nbsp; &nbsp; &nbsp;
+                    <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-xs btn-primary">Editar</a>&nbsp; &nbsp; 
+                    <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-xs btn-info">Detalhes</a>&nbsp; &nbsp; 
                     <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-xs btn-danger">Excluir</a>
                 </td>
             </tr>

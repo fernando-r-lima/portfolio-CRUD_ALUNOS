@@ -23,7 +23,7 @@ namespace ProjetoAlunos2.Services
             return _context.Aluno.Include(obj => obj.Turma).OrderBy(obj => obj.Id).ToList();
         }
 
-        public void CadastrarAluno(Aluno obj) 
+        public void CadastrarAluno(Aluno obj)
         {
             _context.Add(obj);
             _context.SaveChanges();
@@ -40,6 +40,13 @@ namespace ProjetoAlunos2.Services
             var obj = _context.Aluno.Find(id);
             _context.Aluno.Remove(obj);
             _context.SaveChanges();
+        }
+
+        public void AtualizarDados(Aluno obj)
+        {
+            _context.Update(obj);
+            _context.SaveChanges();
+
         }
     }
 }
