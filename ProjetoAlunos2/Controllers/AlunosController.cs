@@ -39,6 +39,15 @@ namespace ProjetoAlunos2.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult Create(Aluno aluno)
         {
+            // if para que a validação do formulário seja feita no servidor em caso de JavaScript desativado
+            if (!ModelState.IsValid)
+            {
+                var turmas = _turmasService.RetornarTodasTurmas();
+                var viewModel = new FormularioAlunoViewModel { Aluno = aluno, Turmas = turmas };
+                return View(viewModel);       
+            }
+            
+
             _alunosService.CadastrarAluno(aluno);
             return RedirectToAction(nameof(Index));
         }
@@ -107,6 +116,13 @@ namespace ProjetoAlunos2.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult Edit(int id, Aluno aluno)
         {
+            // if para que a validação do formulário seja feita no servidor em caso de JavaScript desativado
+            if (!ModelState.IsValid)
+            {
+                var turmas = _turmasService.RetornarTodasTurmas();
+                var viewModel = new FormularioAlunoViewModel { Aluno = aluno, Turmas = turmas };
+                return View(viewModel);
+            }
             _alunosService.AtualizarDados(aluno);
             return RedirectToAction(nameof(Index));
         }

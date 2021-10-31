@@ -31,6 +31,7 @@
                 <label asp-for="Aluno.TurmaId" class="control-label">Disciplina</label>
                 <select asp-for="Aluno.TurmaId" asp-items="@(new SelectList(Model.Turmas,"Id","Disciplina"))" class="form-control"></select>
             </div>
+            <div asp-validation-summary="All" class="text-danger"></div>
             <br />
             <div class="form-group">
                 <input type="submit" value="Salvar" class="btn btn-warning" />&nbsp; &nbsp; &nbsp;
@@ -39,3 +40,8 @@
         </form>
     </div>
 </div>
+
+@*código para rodar validação direto no cliente por JavaScript*@
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -12,15 +12,21 @@ namespace ProjetoAlunos2.Models
         [Display(Name = "Matrícula")]
         public int Id { get; set; }
 
+        [Required(ErrorMessage = "{0} é necessário")]
+        [StringLength(60, ErrorMessage = "{0} deve ter no máximo 60 caracteres")]
         public string Nome { get; set; }
 
+        [Required(ErrorMessage = "{0} é necessário")]
         public string Sobrenome { get; set; }
 
         [Display(Name = "Data de nascimento")]
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
+        [Required(ErrorMessage = "{0} é necessário")]
         public DateTime DataDeNascimento { get; set; }
 
+        [Required(ErrorMessage = "{0} é necessário")]
+        [EmailAddress(ErrorMessage = "Forneça um email válido")]
         [DataType(DataType.EmailAddress)]
         public string Email { get; set; }
 
